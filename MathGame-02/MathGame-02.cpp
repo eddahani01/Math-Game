@@ -270,6 +270,8 @@ void PrintQuizzResults(stQuizz Quizz)
     cout << "Number Of Right Answer: " << Quizz.NumberOfRightAnswers << endl;
     cout << "Number Of Wrong Answer: " << Quizz.NumberOfWrongAnswers << endl;
     cout << "________________________________\n\n";
+
+    SetScreenColor(Quizz.isPass);
 }
 
 void PlayMathGame()
