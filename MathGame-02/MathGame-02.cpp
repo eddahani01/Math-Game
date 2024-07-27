@@ -40,6 +40,15 @@ short ReadHowManyQuestions()
         cout << "How Many Questions do you want to answer? ";
         cin >> NumberOfQuestions;
 
+        // Check for input failure
+        while (cin.fail()) {
+            cin.clear(); // clear the error flag
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard invalid input
+
+            cout << "Invalid number, please enter a valid one : ";
+            cin >> NumberOfQuestions;
+        }
+
     } while (NumberOfQuestions < 1 || NumberOfQuestions >10);
     
 
@@ -55,6 +64,15 @@ enQuestionsLevel ReadQuestionsLevel()
         cout << "Enter Question Level [1] Easy, [2] Med, [3] Hard, [4] Mix ? ";
         cin >> QuestionLevel;
 
+        // Check for input failure
+        while (cin.fail()) {
+            cin.clear(); // clear the error flag
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard invalid input
+
+            cout << "Invalid number, please enter a valid one : ";
+            cin >> QuestionLevel;
+        }
+
     } while (QuestionLevel < 1 || QuestionLevel>4);
     
     return (enQuestionsLevel) QuestionLevel;
@@ -68,6 +86,15 @@ enOperationType ReadOperationType()
     {
         cout << "Enter Operation Type [1] Add, [2] Sub, [3] Mul, [4] Div, [5] Mix ? ";
         cin >> OpType;
+
+        // Check for input failure
+        while (cin.fail()) {
+            cin.clear(); // clear the error flag
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard invalid input
+
+            cout << "Invalid number, please enter a valid one : ";
+            cin >> OpType;
+        }
 
     } while (OpType < 1 || OpType > 5);
     
